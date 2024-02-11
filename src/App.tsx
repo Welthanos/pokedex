@@ -1,9 +1,10 @@
 import './App.css';
+import Home from './pages/home/Home';
 
 export default function App() {
   return (
     <>
-      <h1>PokéBattle</h1>
+      <Home />
     </>
   )
 }
