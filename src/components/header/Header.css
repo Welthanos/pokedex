@@ -1,0 +1,11 @@
+header {
+    height: 4rem;
+    padding: 0.5rem 15rem;
+
+    background-color: rgb(10, 20, 33);
+    border-bottom: 2px solid rgb(102, 124, 138);
+
+    img {
+        height: 3rem;
+    }
+}

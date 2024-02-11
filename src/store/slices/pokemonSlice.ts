@@ -1,9 +1,19 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-interface Pokemon {
+interface Type {
+    type: { name: string };
+}
+
+interface Sprite {
+    front_default: string;
+    back_default: string;
+}
+export interface Pokemon {
     id: string;
     name: string;
+    sprites: Sprite;
+    types: Type[];
 }
 
 interface PokemonState {
@@ -17,7 +27,7 @@ const initialState: PokemonState = {
 export const fetchPokemons = createAsyncThunk('pokemon/fetch', async () => {
     const endpoints = [];
 
-    for (let i = 1; i <= 50; i++) endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
+    for (let i = 1; i <= 54; i++) endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
 
     try {
         const pokemons = await axios.all(endpoints.map(endpoint => axios.get(endpoint).then(res => res.data)));
@@ -26,8 +36,6 @@ export const fetchPokemons = createAsyncThunk('pokemon/fetch', async () => {
     } catch (error) {
         throw error;
     }
-
-
 });
 
 export const pokemonSlice = createSlice({

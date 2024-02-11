@@ -1,24 +1,10 @@
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../hooks/redux";
-import { fetchPokemons } from "../../store/slices/pokemonSlice";
+import CardGroup from "../../components/card-group/CardGroup";
+import './Home.css'
 
 export default function Home() {
-    const pokemons = useAppSelector(state => state.pokemon.pokemons);
-    const dispatch = useAppDispatch();
-    
-    useEffect(() => {
-        dispatch(fetchPokemons());
-    }, []);
-
     return (
-        <>
-            {pokemons && pokemons.map(pokemon => {
-                return (
-                    <div key={pokemon.id}>
-                        {pokemon.name}
-                    </div>
-                );
-            })}
-        </>
+        <main className="home">
+            <CardGroup />
+        </main>
     );
 }
