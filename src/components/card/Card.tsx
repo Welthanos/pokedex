@@ -24,7 +24,9 @@ export default function Card({ name, url, favoriteUrl, type, handleFavorite }: C
                         src={favoriteUrl}
                         onClick={handleFavorite}
                         alt="Adicionar aos favoritos"
-                        role='button' />
+                        role='button'
+                        loading='lazy'
+                    />
                 </div>
                 <p>{capitalizedType}</p>
             </div>

@@ -4,20 +4,13 @@ main.favorites {
     min-height: 80vh;
 
     section.cards {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        gap: 1.5rem;
-
-        width: fit-content;
-        max-width: 1380px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+        place-items: center;
+        
         height: fit-content;
         max-height: 100vh;
         overflow-y: auto;
-
-        margin: 0 auto;
-        padding: 1rem 3rem;
 
         border-left: 4px solid rgb(89, 110, 124);
         border-right: 4px solid rgb(89, 110, 124);
