@@ -12,9 +12,30 @@ header {
     a.logo {
         display: flex;
         align-items: center;
-        
+
         img {
             height: 3rem;
+        }
+    }
+
+    div.actions {
+        display: flex;
+        gap: 1.5rem;
+
+        button {
+            width: 8rem;
+
+            font-size: 1.1rem;
+            font-family: 'Ubuntu';
+
+            padding-block: 0.1rem;
+
+            color: rgb(146, 159, 169);
+
+            background: none;
+            border: 2px solid rgb(108, 120, 128);
+            border-radius: 8px;
+            outline: none;
         }
     }
 
