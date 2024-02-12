@@ -24,7 +24,7 @@ export default function Favorites() {
                                 name={favorite.pokemon.name}
                                 url={favorite.pokemon.sprites.front_default}
                                 favoriteUrl={favoritess.find(f => f.pokemon.id === favorite.pokemon.id) ? pokeball : pokeballEmpty}
-                                type={favorite.pokemon.types['0'].type.name}
+                                types={favorite.pokemon.types.map(type => type.type.name)}
                                 handleFavorite={() => dispatch(removeFavorite(favorite))}
                             />
                         );

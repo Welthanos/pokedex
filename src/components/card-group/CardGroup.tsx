@@ -26,7 +26,7 @@ export default function CardGroup() {
                         name={pokemon.name}
                         url={pokemon.sprites.front_default}
                         favoriteUrl={favorites.find(f => f.pokemon.id === pokemon.id && f.isFavorite) ? pokeball : pokeballEmpty}
-                        type={pokemon.types['0'].type.name}
+                        types={pokemon.types.map(type => type.type.name)}
                         handleFavorite={() => dispatch(addFavorite({ pokemon, isFavorite: true }))}
                     />
                 );

@@ -5,13 +5,12 @@ interface CardProps {
     name: string;
     url: string;
     favoriteUrl: string;
-    type: string;
+    types: string[];
     handleFavorite: () => void;
 }
 
-export default function Card({ name, url, favoriteUrl, type, handleFavorite }: CardProps) {
+export default function Card({ name, url, favoriteUrl, types, handleFavorite }: CardProps) {
     const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
-    const capitalizedType = type.charAt(0).toUpperCase() + type.slice(1);
 
     return (
         <div className='card-container'>
@@ -28,7 +27,7 @@ export default function Card({ name, url, favoriteUrl, type, handleFavorite }: C
                         loading='lazy'
                     />
                 </div>
-                <p>{capitalizedType}</p>
+                {types.map(type => <p>{type[0].charAt(0).toUpperCase() + type.slice(1)}</p>)}
             </div>
         </div>
     );

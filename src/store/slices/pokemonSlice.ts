@@ -27,7 +27,7 @@ const initialState: PokemonState = {
 export const fetchPokemons = createAsyncThunk('pokemon/fetch', async () => {
     const endpoints = [];
 
-    for (let i = 1; i <= 54; i++) endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
+    for (let i = 1; i <= 60; i++) endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
 
     try {
         const pokemons = await axios.all(endpoints.map(endpoint => axios.get(endpoint).then(res => res.data)));
