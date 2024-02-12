@@ -1,22 +1,22 @@
-import './Header.css';
+import { useEffect, useRef, useState } from "react";
+import { Link } from 'react-router-dom';
+
 import pokedex from '../../assets/pokedex.svg';
 import pokeball from '../../assets/pokeball.svg';
-import { Link } from 'react-router-dom';
 import music from '../../assets/music.mp3';
-import { useEffect, useRef, useState } from "react";
+
+import './Header.css';
 
 export default function Header() {
     const audioRef = useRef<HTMLAudioElement>(null);
-    const [audioPlaying, setAudioPlaying] = useState(true);
+    const [audioPlaying, setAudioPlaying] = useState(false);
 
     useEffect(() => {
         if (audioRef.current) {
-            if (audioPlaying) {
-                audioRef.current.play();
-            } else {
-                audioRef.current.pause();
-            }
-            audioRef.current.volume = 0.5;
+            if (audioPlaying) audioRef.current.play();
+            else audioRef.current.pause();
+
+            audioRef.current.volume = 0.4;
         }
     }, [audioPlaying]);
 
