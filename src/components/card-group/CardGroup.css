@@ -2,7 +2,9 @@ section.cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
     place-items: center;
+    gap: 1rem;
 
+    width: auto;
     max-width: 1530px;
     height: 100vh;
     overflow-y: auto;
@@ -13,9 +15,6 @@ section.cards {
     border-left: 4px solid rgb(89, 110, 124);
     border-right: 4px solid rgb(89, 110, 124);
     border-radius: 10px;
-
-    /* Adicione um espaçamento entre os itens da grade */
-    gap: 1rem;
 
     &::-webkit-scrollbar {
         width: 0;

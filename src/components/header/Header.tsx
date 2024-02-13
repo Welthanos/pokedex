@@ -24,12 +24,12 @@ export default function Header() {
 
     return (
         <header>
-            <audio ref={audioRef} loop autoPlay><source src={music} type='audio/mpeg' /></audio>
             <Link className='logo' to='/'><img src={pokedex} alt='Logo da PokéDex' /></Link>
             <div className='actions'>
                 <Link className='favorites' to='/favorites'> <img src={pokeball} alt='Figura de uma Pokébola' />Favorites</Link>
                 <button onClick={handleToggleAudio}>{audioPlaying ? 'Pause Audio' : 'Play Audio'}</button>
             </div>
-        </header >
+            <audio ref={audioRef} loop autoPlay><source src={music} type='audio/mpeg' /></audio>
+        </header>
     );
 }

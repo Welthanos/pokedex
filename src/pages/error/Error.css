@@ -3,9 +3,6 @@ main.error {
     align-items: center;
     justify-content: center;
 
-    height: 80vh;
-    width: 100%;
-
     background-color: rgb(14, 38, 59);
 
     img {

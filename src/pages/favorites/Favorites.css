@@ -1,13 +1,13 @@
 main.favorites {
     padding: 2rem 1rem;
     background-color: rgb(37, 64, 88);
-    min-height: 80vh;
 
     section.cards {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
         place-items: center;
-        
+
+        width: fit-content;
         height: fit-content;
         max-height: 100vh;
         overflow-y: auto;

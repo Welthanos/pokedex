@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Card.css';
 
 interface CardProps {
@@ -9,12 +10,12 @@ interface CardProps {
     handleFavorite: () => void;
 }
 
-export default function Card({ name, url, favoriteUrl, types, handleFavorite }: CardProps) {
+export default function Card({ id, name, url, favoriteUrl, types, handleFavorite }: CardProps) {
     const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
 
     return (
         <div className='card-container'>
-            <img className='pokemon' src={url} alt={`Imagem do pokémon ${name}`} />
+            <Link to={`./detail/${id}`}><img className='pokemon' src={url} alt={`Imagem do pokémon ${name}`} /></Link>
             <div className='info'>
                 <div>
                     <h3>{capitalizedName}</h3>
@@ -27,7 +28,7 @@ export default function Card({ name, url, favoriteUrl, types, handleFavorite }: 
                         loading='lazy'
                     />
                 </div>
-                {types.map(type => <p>{type[0].charAt(0).toUpperCase() + type.slice(1)}</p>)}
+                {types.map(type => <p key={type}>{type[0].charAt(0).toUpperCase() + type.slice(1)}</p>)}
             </div>
         </div>
     );

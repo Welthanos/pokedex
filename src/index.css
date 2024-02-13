@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+main {
+  min-height: 80vh;
+}
+
 button {
   cursor: pointer;
 }

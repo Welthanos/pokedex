@@ -9,11 +9,14 @@ interface Sprite {
     front_default: string;
     back_default: string;
 }
+
 export interface Pokemon {
     id: string;
     name: string;
-    sprites: Sprite;
+    height: string;
+    weight: string;
     types: Type[];
+    sprites: Sprite;
 }
 
 interface PokemonState {

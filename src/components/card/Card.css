@@ -8,14 +8,24 @@ div.card-container {
     box-shadow: 1px 2px 15px 0px #8f8f8f;
     border-radius: 10px;
 
-    img.pokemon {
-        height: 70%;
-        width: 100%;
-        object-fit: contain;
+    a {
+        height: 11.85rem;
 
         background-color: rgb(184, 199, 210);
         border-top-left-radius: 9px;
         border-top-right-radius: 9px;
+
+        overflow: hidden;
+
+        img.pokemon {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
     }
 
     div.info {
@@ -38,6 +48,10 @@ div.card-container {
         img.pokeball {
             width: 1.5rem;
             cursor: pointer;
+
+            &:hover {
+                transform: scale(1.02);
+            }
         }
 
         p {
