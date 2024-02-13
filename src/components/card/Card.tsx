@@ -15,7 +15,7 @@ export default function Card({ id, name, url, favoriteUrl, types, handleFavorite
 
     return (
         <div className='card-container'>
-            <Link to={`./detail/${id}`}><img className='pokemon' src={url} alt={`Imagem do pokémon ${name}`} /></Link>
+            <Link to={`/detail/${id}`}><img className='pokemon' src={url} alt={`Imagem do pokémon ${name}`} /></Link>
             <div className='info'>
                 <div>
                     <h3>{capitalizedName}</h3>

@@ -1,16 +1,14 @@
-import { useParams } from 'react-router-dom';
-import './Detail.css';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { useEffect } from 'react';
 import { fetchPokemons } from '../../store/slices/pokemonSlice';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import './Detail.css';
 
 export default function Detail() {
     const { id } = useParams();
     const pokemons = useAppSelector(state => state.pokemon.pokemons);
     const pokemon = pokemons.filter(pokemon => String(pokemon.id) === id)[0];
     const dispatch = useAppDispatch();
-
-    console.log(pokemon)
 
     useEffect(() => {
         dispatch(fetchPokemons());
@@ -27,7 +25,7 @@ export default function Detail() {
                         <h2>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
 
                         <h3>Height</h3>
-                        <p>{parseInt(pokemon.height) * 10} cm</p>
+                        <p>{parseInt(pokemon.height) / 10} m</p>
 
                         <h3>Weight</h3>
                         <p>{parseInt(pokemon.weight) / 10} kg</p>
