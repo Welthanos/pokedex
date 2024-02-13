@@ -1,11 +1,11 @@
 import Card from "../../components/card/Card";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { addFavorite, removeFavorite } from "../../store/slices/favoriteSlice";
+import { Pokemon } from "../../interfaces/interfaces";
 import './Favorites.css';
 
 import pokeballEmpty from "../../assets/pokeball-empty.svg";
 import pokeball from "../../assets/pokeball.svg";
-import { Pokemon } from "../../store/slices/pokemonSlice";
 
 export default function Favorites() {
     const favorites = useAppSelector(state => state.favorite.favorites);

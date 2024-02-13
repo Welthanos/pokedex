@@ -1,27 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { PokemonState } from '../../interfaces/interfaces';
 import axios from 'axios';
-
-interface Type {
-    type: { name: string };
-}
-
-interface Sprite {
-    front_default: string;
-    back_default: string;
-}
-
-export interface Pokemon {
-    id: string;
-    name: string;
-    height: string;
-    weight: string;
-    types: Type[];
-    sprites: Sprite;
-}
-
-interface PokemonState {
-    pokemons: Pokemon[];
-}
 
 const initialState: PokemonState = {
     pokemons: [],
@@ -52,5 +31,4 @@ export const pokemonSlice = createSlice({
     },
 });
 
-export const { } = pokemonSlice.actions;
 export default pokemonSlice.reducer;

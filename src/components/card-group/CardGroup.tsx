@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { Pokemon, fetchPokemons } from '../../store/slices/pokemonSlice';
+import { fetchPokemons } from '../../store/slices/pokemonSlice';
 import { addFavorite, removeFavorite } from '../../store/slices/favoriteSlice';
+import { Pokemon } from '../../interfaces/interfaces';
+
 import pokeballEmpty from "../../assets/pokeball-empty.svg";
 import pokeball from "../../assets/pokeball.svg";
 import Card from '../card/Card';

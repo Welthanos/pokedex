@@ -7,7 +7,7 @@ import './Detail.css';
 export default function Detail() {
     const { id } = useParams();
     const pokemons = useAppSelector(state => state.pokemon.pokemons);
-    const pokemon = pokemons.filter(pokemon => String(pokemon.id) === id)[0];
+    const pokemon = pokemons.filter(pokemon => String(pokemon.id) === id)[0]
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -16,27 +16,46 @@ export default function Detail() {
 
     return (
         <main className='detail'>
+            <h1>Pokémon Details</h1>
             {pokemon && (
                 <div className='detail-container'>
                     <picture>
                         <img src={pokemon.sprites.front_default} alt={`Imagem do Pokémon ${pokemon.name}`} />
                     </picture>
-                    <div className='info'>
+
+                    <div className='infos'>
                         <h2>{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
 
-                        <h3>Height</h3>
-                        <p>{parseInt(pokemon.height) / 10} m</p>
+                        <div className='info-text'>
+                            <div className="text">
+                                <h3>Height</h3>
+                                <p>{parseInt(pokemon.height) / 10} m</p>
+                            </div>
+                            <div className="text">
+                                <h3>Weight</h3>
+                                <p>{parseInt(pokemon.weight) / 10} kg</p>
+                            </div>
+                        </div>
 
-                        <h3>Weight</h3>
-                        <p>{parseInt(pokemon.weight) / 10} kg</p>
+                        <div className='info-text'>
+                            <div className="text">
+                                <h3>Types</h3>
+                                {pokemon.types.map(t => (
+                                    <p className='type' key={t.type.name}>{t.type.name[0].toUpperCase() + t.type.name.slice(1)}</p>
+                                ))}
+                            </div>
 
-                        <h3>Types</h3>
-                        {pokemon.types.map(type => (
-                            <p className='type' key={type.type.name}>{type.type.name[0].toUpperCase() + type.type.name.slice(1)}</p>
-                        ))}
+                            <div className="text">
+                                <h3>Abilities</h3>
+                                {pokemon.abilities.map(a => (
+                                    <p className='ability' key={a.ability.name}>{a.ability.name[0].toUpperCase() + a.ability.name.slice(1)}</p>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </div>
             )}
-        </main>
+            <div className='bottom'></div>
+        </main >
     );
 }    

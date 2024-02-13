@@ -1,14 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { Pokemon } from './pokemonSlice';
-
-export interface Favorite {
-    pokemon: Pokemon;
-    isFavorite: boolean;
-}
-
-interface FavoriteState {
-    favorites: Favorite[];
-}
+import { Favorite, FavoriteState } from '../../interfaces/interfaces';
 
 const initialState: FavoriteState = {
     favorites: [],
