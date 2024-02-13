@@ -1,6 +1,6 @@
-# Trilha Frontend | Task 01 - Redux
+# Trilha Frontend | Task 02 - Redux
 
-Tarefa para a 1ª aula de Redux, a fim de praticar e fixar os conceitos em aula ministrados.
+Tarefa para a 2ª aula de Redux, a fim de praticar e fixar os conceitos em aula ministrados.
 
 ## Tecnologias
 
